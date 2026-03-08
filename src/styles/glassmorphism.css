@@ -1,0 +1,113 @@
+/* Glassmorphism Design System for Hikzen Labs */
+
+:root {
+  /* Brand Colors */
+  --brand-blue: #0066ff;
+  --brand-cyan: #00d4ff;
+  --brand-aqua: #00ffcc;
+  --brand-purple: #7c3aed;
+  --brand-teal: #14b8a6;
+  
+  /* Gradient Definitions */
+  --gradient-primary: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #7c3aed 0%, #00d4ff 100%);
+  --gradient-accent: linear-gradient(135deg, #00ffcc 0%, #14b8a6 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.1) 50%, rgba(124, 58, 237, 0.1) 100%);
+  
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.dark {
+  --glass-bg: rgba(20, 20, 40, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glass Card Base */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+}
+
+/* Glass Nav */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.1);
+}
+
+.dark .glass-nav {
+  background: rgba(20, 20, 40, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-secondary {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Effects */
+.glass-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-hover:hover {
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Animated Gradient Background */
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #0066ff15, #00d4ff15, #7c3aed15, #00ffcc15);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Animation */
+.floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 102, 255, 0.2);
+}
+
+.dark .glow {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5), 0 0 60px rgba(0, 102, 255, 0.3);
+}
