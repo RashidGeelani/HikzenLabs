@@ -10,6 +10,7 @@ import { BlogPage } from '@/app/pages/blog';
 import { TestimonialsPage } from '@/app/pages/testimonials';
 import { FAQPage } from '@/app/pages/faq';
 import { ContactPage } from '@/app/pages/contact';
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -56,6 +57,9 @@ export default function App() {
         {renderPage()}
       </main>
       <Footer onNavigate={handleNavigate} />
+
+      <Analytics />
     </div>
+    
   );
 }
