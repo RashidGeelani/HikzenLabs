@@ -39,14 +39,14 @@ export function ContactPage() {
     {
       icon: Phone,
       title: 'Call Us',
-      value: '+1 (234) 567-890',
-      link: 'tel:+1234567890',
+      value: '+91 7889413672',
+      link: 'tel:+917889413672',
       gradient: 'from-[#00d4ff]/20 to-[#00ffcc]/20'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      value: 'San Francisco, CA',
+      value: 'Srinagar, Kashmir',
       link: '#',
       gradient: 'from-[#7c3aed]/20 to-[#00d4ff]/20'
     },
@@ -60,9 +60,9 @@ export function ContactPage() {
   ];
 
   const officeHours = [
-    { day: 'Monday - Friday', hours: '9:00 AM - 6:00 PM PST' },
-    { day: 'Saturday', hours: '10:00 AM - 4:00 PM PST' },
-    { day: 'Sunday', hours: 'Closed' }
+    { day: 'Monday - Friday', hours: '4:00 PM - 10:00 PM IST' },
+    { day: 'Saturday - Sunday', hours: '9:00 AM - 5:00 PM IST' },
+    // { day: 'Sunday', hours: 'Closed' }
   ];
 
   return (
@@ -265,7 +265,7 @@ export function ContactPage() {
                   <div className="p-3 rounded-xl bg-gradient-to-br from-[#0066ff]/20 to-[#00d4ff]/20">
                     <Calendar className="w-6 h-6 text-[#0066ff]" />
                   </div>
-                  <h3 className="text-2xl font-bold">Office Hours</h3>
+                  <h3 className="text-2xl font-bold">Contact Hours</h3>
                 </div>
                 <div className="space-y-4">
                   {officeHours.map((schedule, index) => (
@@ -321,7 +321,7 @@ export function ContactPage() {
                 <div className="h-64 bg-gradient-to-br from-[#0066ff]/20 to-[#00d4ff]/20 rounded-lg flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-[#0066ff] mx-auto mb-3" />
-                    <div className="font-semibold">San Francisco, CA</div>
+                    <div className="font-semibold">Srinagar, Kashmir</div>
                     <div className="text-sm text-foreground/70">Remote-First Company</div>
                   </div>
                 </div>

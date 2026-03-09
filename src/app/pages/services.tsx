@@ -221,12 +221,13 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-5 gap-6">
             {[
               { step: '01', title: 'Discovery', description: 'Understanding your needs and goals' },
               { step: '02', title: 'Planning', description: 'Creating a detailed roadmap' },
               { step: '03', title: 'Development', description: 'Building your solution with agile methods' },
-              { step: '04', title: 'Delivery', description: 'Launch and ongoing support' }
+              { step: '04', title: 'Testing', description: 'Testing your solution beforing launch' },
+              { step: '05', title: 'Delivery', description: 'Launch and ongoing support' }
             ].map((phase, index) => (
               <motion.div
                 key={index}

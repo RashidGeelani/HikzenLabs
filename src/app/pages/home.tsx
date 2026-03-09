@@ -141,14 +141,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
             >
-              {stats.map((stat, index) => (
+              {/* {stats.map((stat, index) => (
                 <div key={index} className="glass-card p-6">
                   <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                     {stat.number}
                   </div>
                   <div className="text-foreground/70">{stat.label}</div>
                 </div>
-              ))}
+              ))} */}
             </motion.div>
           </div>
         </div>
@@ -286,7 +286,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Trust Section */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -317,7 +317,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 relative">

@@ -14,68 +14,12 @@ export function PortfolioPage({ onNavigate }: PortfolioPageProps) {
 
   const projects = [
     {
-      title: 'FinTech Dashboard',
+      title: 'E-Commerce Website',
       category: 'Web Development',
-      description: 'Modern financial analytics platform with real-time data visualization',
+      description: 'Modern E-Commerce website for increase in sales.',
       image: 'fintech dashboard',
       tags: ['React', 'TypeScript', 'D3.js'],
       gradient: 'from-[#0066ff]/20 to-[#00d4ff]/20'
-    },
-    {
-      title: 'Health & Fitness App',
-      category: 'Mobile Apps',
-      description: 'Cross-platform mobile app for tracking workouts and nutrition',
-      image: 'fitness mobile app',
-      tags: ['React Native', 'Node.js', 'MongoDB'],
-      gradient: 'from-[#00d4ff]/20 to-[#00ffcc]/20'
-    },
-    {
-      title: 'AI Chatbot Platform',
-      category: 'AI Solutions',
-      description: 'Intelligent customer service automation with NLP capabilities',
-      image: 'ai chatbot interface',
-      tags: ['Python', 'TensorFlow', 'AWS'],
-      gradient: 'from-[#7c3aed]/20 to-[#00d4ff]/20'
-    },
-    {
-      title: 'E-commerce Redesign',
-      category: 'UI/UX Design',
-      description: 'Complete UI/UX overhaul for major online retailer',
-      image: 'ecommerce website',
-      tags: ['Figma', 'User Research', 'Prototyping'],
-      gradient: 'from-[#14b8a6]/20 to-[#00ffcc]/20'
-    },
-    {
-      title: 'SaaS Management Tool',
-      category: 'Web Development',
-      description: 'Enterprise project management and collaboration platform',
-      image: 'saas dashboard',
-      tags: ['Next.js', 'PostgreSQL', 'GraphQL'],
-      gradient: 'from-[#0066ff]/20 to-[#7c3aed]/20'
-    },
-    {
-      title: 'Food Delivery App',
-      category: 'Mobile Apps',
-      description: 'On-demand food delivery with real-time tracking',
-      image: 'food delivery app',
-      tags: ['Flutter', 'Firebase', 'Google Maps'],
-      gradient: 'from-[#00ffcc]/20 to-[#14b8a6]/20'
-    },
-    {
-      title: 'Predictive Analytics System',
-      category: 'AI Solutions',
-      description: 'Machine learning platform for business forecasting',
-      image: 'analytics dashboard',
-      tags: ['Python', 'Scikit-learn', 'Tableau'],
-      gradient: 'from-[#7c3aed]/20 to-[#0066ff]/20'
-    },
-    {
-      title: 'Banking App Interface',
-      category: 'UI/UX Design',
-      description: 'Modern, secure mobile banking experience',
-      image: 'banking app interface',
-      tags: ['Sketch', 'Principle', 'User Testing'],
-      gradient: 'from-[#00d4ff]/20 to-[#0066ff]/20'
     }
   ];
 
@@ -182,10 +126,10 @@ export function PortfolioPage({ onNavigate }: PortfolioPageProps) {
           <div className="glass-card p-12">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               {[
-                { number: '500+', label: 'Projects Completed' },
-                { number: '200+', label: 'Happy Clients' },
-                { number: '98%', label: 'Success Rate' },
-                { number: '15+', label: 'Countries Served' }
+                { number: '0', label: 'Projects Completed' },
+                { number: '0', label: 'Happy Clients' },
+                { number: '100%', label: 'Success Rate' },
+                { number: '0', label: 'Clients Served' }
               ].map((stat, index) => (
                 <motion.div
                   key={index}

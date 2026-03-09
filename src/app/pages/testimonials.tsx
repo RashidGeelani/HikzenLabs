@@ -10,66 +10,21 @@ interface TestimonialsPageProps {
 export function TestimonialsPage({ onNavigate }: TestimonialsPageProps) {
   const testimonials = [
     {
-      name: 'Sarah Johnson',
+      name: 'Bilal Lone',
       role: 'CEO',
-      company: 'TechStart Inc.',
+      company: 'Lone & Sons Kmr.',
       image: 'professional woman ceo',
       rating: 5,
-      text: 'Hikzen Labs transformed our business with their AI automation solutions. The team is incredibly professional, and the results exceeded our expectations. Our efficiency has increased by 300%!',
+      text: 'Dummy: Hikzen Labs transformed our business with their AI automation solutions. The team is incredibly professional, and the results exceeded our expectations. Our efficiency has increased by 300%!',
       gradient: 'from-[#0066ff]/20 to-[#00d4ff]/20'
-    },
-    {
-      name: 'Michael Chen',
-      role: 'CTO',
-      company: 'FinanceFlow',
-      image: 'professional man cto',
-      rating: 5,
-      text: 'Working with Hikzen Labs on our mobile app was a game-changer. Their expertise in React Native and attention to detail resulted in a flawless product that our users love.',
-      gradient: 'from-[#00d4ff]/20 to-[#00ffcc]/20'
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Marketing Director',
-      company: 'GrowthHub',
-      image: 'professional woman marketing',
-      rating: 5,
-      text: 'The digital marketing strategies implemented by Hikzen Labs have tripled our online engagement. Their data-driven approach and creative solutions are simply outstanding.',
-      gradient: 'from-[#7c3aed]/20 to-[#00d4ff]/20'
-    },
-    {
-      name: 'David Kim',
-      role: 'Founder',
-      company: 'Startup Vision',
-      image: 'professional man founder',
-      rating: 5,
-      text: 'From initial consultation to final delivery, Hikzen Labs demonstrated exceptional professionalism. They built our website and backend infrastructure flawlessly.',
-      gradient: 'from-[#14b8a6]/20 to-[#00ffcc]/20'
-    },
-    {
-      name: 'Lisa Martinez',
-      role: 'Product Manager',
-      company: 'InnovateCo',
-      image: 'professional woman manager',
-      rating: 5,
-      text: 'The UI/UX design work done by Hikzen Labs is phenomenal. Our app has received countless compliments, and user retention has improved significantly.',
-      gradient: 'from-[#0066ff]/20 to-[#7c3aed]/20'
-    },
-    {
-      name: 'James Wilson',
-      role: 'VP of Technology',
-      company: 'CloudScale',
-      image: 'professional man vp',
-      rating: 5,
-      text: 'Hikzen Labs built a scalable backend system that handles millions of requests daily. Their technical expertise and problem-solving skills are top-notch.',
-      gradient: 'from-[#00ffcc]/20 to-[#14b8a6]/20'
     }
   ];
 
   const stats = [
-    { number: '200+', label: 'Happy Clients' },
-    { number: '4.9/5', label: 'Average Rating' },
-    { number: '98%', label: 'Satisfaction Rate' },
-    { number: '500+', label: 'Projects Delivered' }
+    { number: '0', label: 'Happy Clients' },
+    { number: '5/5', label: 'Average Rating' },
+    { number: '100%', label: 'Satisfaction Rate' },
+    { number: '0', label: 'Projects Delivered' }
   ];
 
   return (
@@ -217,7 +172,7 @@ export function TestimonialsPage({ onNavigate }: TestimonialsPageProps) {
 
           <div className="glass-card p-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
-              {[...Array(8)].map((_, i) => (
+              {[...Array(1)].map((_, i) => (
                 <div key={i} className="flex items-center justify-center opacity-50">
                   <div className="text-xl font-bold text-foreground/40">
                     Company {i + 1}

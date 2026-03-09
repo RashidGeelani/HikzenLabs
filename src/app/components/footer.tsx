@@ -133,8 +133,8 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Phone className="w-5 h-5 text-[#0066ff] mt-0.5" />
                 <div>
                   <p className="text-sm text-foreground/70">Phone</p>
-                  <a href="tel:+1234567890" className="text-foreground hover:text-[#0066ff] transition-colors">
-                    +1 (234) 567-890
+                  <a href="tel:+917889413672" className="text-foreground hover:text-[#0066ff] transition-colors">
+                    +91 7889413672
                   </a>
                 </div>
               </li>
@@ -142,7 +142,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <MapPin className="w-5 h-5 text-[#0066ff] mt-0.5" />
                 <div>
                   <p className="text-sm text-foreground/70">Location</p>
-                  <p className="text-foreground">San Francisco, CA</p>
+                  <p className="text-foreground">Srinagar, Kashmir</p>
                 </div>
               </li>
             </ul>
@@ -153,7 +153,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-foreground/70 text-sm">
-              © 2026 Hikzen Labs. All rights reserved.
+              © 2025 Hikzen Labs. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-foreground/70 hover:text-[#0066ff] transition-colors">

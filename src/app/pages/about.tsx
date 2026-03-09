@@ -16,29 +16,19 @@ import {
 export function AboutPage() {
   const timeline = [
     {
-      year: '2020',
+      year: 'Dec, 2025',
       title: 'Founded',
-      description: 'Hikzen Labs was born with a vision to revolutionize IT services'
+      description: 'Hikzen Labs was born with a vision to revolutionize IT services and innovation in Kashmir.'
     },
     {
-      year: '2021',
-      title: 'First AI Product',
-      description: 'Launched our first AI-powered automation platform'
+      year: 'Feb, 2026',
+      title: 'Launched',
+      description: 'Live to the public and started working on our vision.'
     },
     {
-      year: '2023',
-      title: 'Global Expansion',
-      description: 'Expanded operations to serve clients across 15+ countries'
-    },
-    {
-      year: '2024',
-      title: 'Industry Recognition',
-      description: 'Awarded "Best AI Innovation Startup" by Tech Leaders Summit'
-    },
-    {
-      year: '2026',
-      title: 'Future Vision',
-      description: 'Building next-generation AI products for enterprise solutions'
+      year: 'Mar, 2026',
+      title: 'Client Hunt',
+      description: 'Landing our first client.'
     }
   ];
 
@@ -76,10 +66,10 @@ export function AboutPage() {
   ];
 
   const teamStats = [
-    { icon: Users, number: '50+', label: 'Expert Team Members' },
-    { icon: Award, number: '15+', label: 'Industry Awards' },
-    { icon: TrendingUp, number: '98%', label: 'Client Satisfaction' },
-    { icon: Globe, number: '15+', label: 'Countries Served' }
+    { icon: Users, number: '2+', label: 'Expert Team Members' },
+    { icon: Award, number: '0', label: 'Milestones' },
+    { icon: TrendingUp, number: '100%', label: 'Client Satisfaction' },
+    { icon: Globe, number: '0', label: 'Clients Served' }
   ];
 
   return (
@@ -232,7 +222,7 @@ export function AboutPage() {
               Our <span className="gradient-text">Journey</span>
             </h2>
             <p className="text-xl text-foreground/70">
-              From startup to industry leader
+              From learners to practitioners
             </p>
           </div>
 
@@ -282,7 +272,7 @@ export function AboutPage() {
                 and collaboration. Our team is passionate about technology and committed to 
                 pushing the boundaries of what's possible.
               </p>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              {/* <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 {[
                   { label: 'Remote-First', value: '100%' },
                   { label: 'Work-Life Balance', value: '⭐⭐⭐⭐⭐' },
@@ -293,7 +283,7 @@ export function AboutPage() {
                     <div className="text-foreground/70">{item.label}</div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
