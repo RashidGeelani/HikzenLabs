@@ -33,7 +33,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Services', id: 'services' },
-    { name: 'Pricing', id: 'pricing' },
+    { name: 'Product', id: 'product' },
     { name: 'Portfolio', id: 'portfolio' },
     { name: 'Blog', id: 'blog' },
     { name: 'Testimonials', id: 'testimonials' },

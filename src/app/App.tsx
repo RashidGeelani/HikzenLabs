@@ -4,7 +4,7 @@ import { Footer } from '@/app/components/footer';
 import { HomePage } from '@/app/pages/home';
 import { AboutPage } from '@/app/pages/about';
 import { ServicesPage } from '@/app/pages/services';
-import { PricingPage } from '@/app/pages/pricing';
+import { ProductsPage } from '@/app/pages/product'
 import { PortfolioPage } from '@/app/pages/portfolio';
 import { BlogPage } from '@/app/pages/blog';
 import { TestimonialsPage } from '@/app/pages/testimonials';
@@ -33,8 +33,8 @@ export default function App() {
         return <AboutPage />;
       case 'services':
         return <ServicesPage onNavigate={handleNavigate} />;
-      case 'pricing':
-        return <PricingPage onNavigate={handleNavigate} />;
+      case 'product':
+        return <ProductsPage onNavigate={handleNavigate} />;
       case 'portfolio':
         return <PortfolioPage onNavigate={handleNavigate} />;
       case 'blog':
