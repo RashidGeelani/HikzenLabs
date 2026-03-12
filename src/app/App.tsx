@@ -11,6 +11,7 @@ import { TestimonialsPage } from '@/app/pages/testimonials';
 import { FAQPage } from '@/app/pages/faq';
 import { ContactPage } from '@/app/pages/contact';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -59,6 +60,7 @@ export default function App() {
       <Footer onNavigate={handleNavigate} />
 
       <Analytics />
+      <SpeedInsights />
     </div>
     
   );
