@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   Bot, 
@@ -15,16 +15,20 @@ interface ProductsPageProps {
 }
 
 export function ProductsPage({ onNavigate }: ProductsPageProps) {
+
+const [success, setSuccess] = useState(false);
+const [loading, setLoading] = useState(false);
+
   return (
     <div className="min-h-screen pt-32 pb-24">
       {/* Hero Section */}
-      <section className="mb-24 relative">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#0066ff]/20 rounded-full blur-3xl floating"></div>
+      <section className="mb-24 py-16 relative">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[#0066ff]/5 via-[#00d4ff]/5 to-[#7c3aed]/5"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#7c3aed]/20 rounded-full blur-3xl floating" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,32 +55,60 @@ export function ProductsPage({ onNavigate }: ProductsPageProps) {
               transition={{ delay: 0.3 }}
               className="max-w-xl mx-auto"
             >
-              <div className="glass-card p-8 glow">
+              <div className="glass-card p-8 glow relative z-30">
                 <h3 className="text-xl font-semibold mb-4">Get Early Access</h3>
                 <p className="text-foreground/70 mb-6">
                   Join our waitlist and be among the first to access our AI products when they launch
                 </p>
-                <form 
-                  onSubmit={(e) => {
+                <form
+                  onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {
                     e.preventDefault();
-                    alert('Thank you for joining our waitlist! We\'ll notify you when products are available.');
+                    const form = e.currentTarget;
+                    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+                    setLoading(true);
+                    await fetch("https://script.google.com/macros/s/AKfycby8JvG6ori9vhDBo3_XPhyv7XdfxLXe9BXy9e9IyrAbwYiIRazsbf8zYiQaMfN2nfdN/exec", {
+                      method: "POST",
+                      mode: "no-cors",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({
+                        email: email
+                      })
+                    });
+
+                    setLoading(false);
+                    setSuccess(true);
+                    form.reset();
                   }}
                   className="flex flex-col sm:flex-row gap-3"
                 >
                   <input
+                    name="email"
                     type="email"
                     placeholder="Enter your email"
                     required
                     className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
                   />
+
                   <button
                     type="submit"
+                    disabled={loading}
                     className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#0066ff] to-[#00d4ff] text-white hover:shadow-lg hover:shadow-[#0066ff]/30 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
+                  >{loading ? "Joining..." : "Join Waitlist"}
                     <Mail className="w-4 h-4" />
-                    Join Waitlist
                   </button>
+                  
                 </form>
+                {success && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-4 text-green-400 font-medium"
+                      >
+                        ✅ You're on the waitlist! We'll notify you when we launch.
+                      </motion.div>
+                    )}
               </div>
             </motion.div>
           </motion.div>

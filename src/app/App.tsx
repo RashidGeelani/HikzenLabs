@@ -54,7 +54,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground animated-gradient-bg">
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      <main>
+      <main className="pt-24">
         {renderPage()}
       </main>
       <Footer onNavigate={handleNavigate} />
