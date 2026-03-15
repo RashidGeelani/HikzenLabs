@@ -27,7 +27,8 @@ export function Footer({ onNavigate }: FooterProps) {
                 Subscribe to our newsletter for the latest updates on AI, tech trends, and our services.
               </p>
             </div>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-3">
+            <form 
+            onSubmit={handleNewsletterSubmit} className="flex gap-3">
               <input
                 type="email"
                 placeholder="Enter your email"
