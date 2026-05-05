@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, MessageSquare, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, MessageSquare, Calendar, Linkedin, Twitter, Facebook, Instagram, Github} from 'lucide-react';
 
 export function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -20,6 +20,15 @@ export function ContactPage() {
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 5000);
   };
+
+  const socials = [
+  { name: "LinkedIn", icon: Linkedin, link: "#" },
+  { name: "Twitter", icon: Twitter, link: "#" },
+  { name: "Facebook", icon: Facebook, link: "#" },
+  { name: "Instagram", icon: Instagram, link: "https://www.instagram.com/hikzenlabs?igsh=YTAwdzdyMzhuYWJ1" },
+  { name: "GitHub", icon: Github, link: "#" },
+];
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -51,9 +60,9 @@ export function ContactPage() {
       gradient: 'from-[#7c3aed]/20 to-[#00d4ff]/20'
     },
     {
-      icon: Globe,
-      title: 'Global Presence',
-      value: '15+ Countries',
+      icon: MapPin,
+      title: 'Also At',
+      value: 'Mumbai, Maharashtra',
       link: '#',
       gradient: 'from-[#14b8a6]/20 to-[#00ffcc]/20'
     }
@@ -147,7 +156,7 @@ export function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
-                        placeholder="John Doe"
+                        placeholder="Gul Kaak"
                       />
                     </div>
                     <div>
@@ -159,7 +168,7 @@ export function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
-                        placeholder="john@company.com"
+                        placeholder="mrgul@company.com"
                       />
                     </div>
                   </div>
@@ -173,7 +182,7 @@ export function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
-                        placeholder="+1 (234) 567-890"
+                        placeholder="+91 2345678906"
                       />
                     </div>
                     <div>
@@ -184,7 +193,7 @@ export function ContactPage() {
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
-                        placeholder="Your Company"
+                        placeholder="Gul Kaak & Sons Company"
                       />
                     </div>
                   </div>
@@ -220,11 +229,11 @@ export function ContactPage() {
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
                       >
                         <option value="">Select budget</option>
-                        <option value="<5k">Less than $5,000</option>
-                        <option value="5k-10k">$5,000 - $10,000</option>
-                        <option value="10k-25k">$10,000 - $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="50k+">$50,000+</option>
+                        <option value="<5k">Less than ₹5,000</option>
+                        <option value="5k-10k">₹5,000 - ₹10,000</option>
+                        <option value="10k-25k">₹10,000 - ₹25,000</option>
+                        <option value="25k-50k">₹25,000 - ₹50,000</option>
+                        <option value="50k+">₹50,000+</option>
                       </select>
                     </div>
                   </div>
@@ -341,18 +350,22 @@ export function ContactPage() {
             <p className="text-foreground/70 mb-8">
               Follow us on social media for the latest updates, insights, and tech trends
             </p>
-            <div className="flex justify-center gap-4">
-              {['LinkedIn', 'Twitter', 'Facebook', 'Instagram', 'GitHub'].map((social, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-12 h-12 rounded-full glass-card glass-hover flex items-center justify-center"
-                >
-                  <span className="sr-only">{social}</span>
-                  <div className="w-6 h-6 bg-gradient-to-br from-[#0066ff] to-[#00d4ff] rounded"></div>
-                </a>
-              ))}
-            </div>
+            <div className="flex justify-center gap-3 sm:gap-4 flex-wrap">
+  {socials.map((social, index) => {
+    const Icon = social.icon;
+
+    return (
+      <a
+        key={index}
+        href={social.link}
+        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card glass-hover flex items-center justify-center transition-all duration-300 hover:scale-110"
+      >
+        <span className="sr-only">{social.name}</span>
+        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-black dark:text-white" />
+      </a>
+    );
+  })}
+</div>
           </div>
         </div>
       </section>

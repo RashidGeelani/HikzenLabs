@@ -20,7 +20,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
         },
         {
           question: 'Where is Hikzen Labs located?',
-          answer: 'While our headquarters is in San Francisco, CA, we operate as a remote-first company with team members across 15+ countries. This allows us to provide 24/7 support and serve clients globally.'
+          answer: 'While our headquarters are in Srinagar Kashmir and Mumbai Maharashtra, we operate as a remote-first company. This allows us to provide 24/7 support and serve clients globally.'
         },
         {
           question: 'What industries do you work with?',
@@ -34,11 +34,11 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       questions: [
         {
           question: 'How much does a typical project cost?',
-          answer: 'Project costs vary based on scope, complexity, and requirements. Our Starter package begins at $499/month, Professional at $1,499/month, and Enterprise at $4,999/month. We also offer custom pricing for unique projects. Contact us for a detailed quote.'
+          answer: 'Project costs vary based on scope, complexity, and requirements. Our Starter package begins at ₹4999, Professional at ₹14,999, and Enterprise at ₹49,999. We also offer custom pricing for unique projects. Contact us for a detailed quote.'
         },
         {
           question: 'Do you offer maintenance and support?',
-          answer: 'Yes! All our packages include post-launch support. Starter includes 1 month, Professional includes 3 months, and Enterprise includes 12 months of support. We also offer ongoing maintenance contracts for long-term partnerships.'
+          answer: 'Yes! All our packages include post-launch support. Starter includes 1 month, Professional includes 3 months, and Enterprise includes 6 months of support. We also offer ongoing maintenance contracts for long-term partnerships.'
         },
         {
           question: 'Can I upgrade or downgrade my plan?',
@@ -56,7 +56,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
         },
         {
           question: 'How long does a typical project take?',
-          answer: 'Timeline depends on project complexity. A basic website takes 2-4 weeks, a mobile app 8-12 weeks, and enterprise solutions 3-6 months. We\'ll provide a detailed timeline during the planning phase.'
+          answer: 'Timeline depends on project complexity. A basic website takes 1-2 weeks, a mobile app 8-12 weeks, and enterprise solutions 3-6 months. We\'ll provide a detailed timeline during the planning phase.'
         },
         {
           question: 'Will I have input during development?',
@@ -88,7 +88,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       questions: [
         {
           question: 'What technologies and frameworks do you use?',
-          answer: 'We use modern, industry-standard technologies including React, Next.js, React Native, Flutter, Node.js, Python, PostgreSQL, MongoDB, AWS, and more. We choose the best stack for each project\'s specific needs.'
+          answer: 'We use modern, industry-standard technologies including React, Next.js, React Native, Flutter, Node.js, Python, PostgreSQL, MongoDB, AWS, java, Springboot and more. We choose the best stack for each project\'s specific needs.'
         },
         {
           question: 'Do you provide source code?',

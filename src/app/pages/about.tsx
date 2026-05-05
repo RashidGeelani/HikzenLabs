@@ -86,7 +86,7 @@ export function AboutPage() {
               About <span className="gradient-text">Hikzen Labs</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto">
-              We're a team of innovators, dreamers, and problem-solvers dedicated to 
+              We're a team of innovators, dreamers, and problem-solvers based in Kashmir dedicated to 
               transforming businesses through AI and cutting-edge technology
             </p>
           </motion.div>
@@ -105,7 +105,7 @@ export function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-foreground/70">
-                To empower businesses worldwide with innovative AI and IT solutions that drive 
+                To empower businesses in Kashmir and worldwide with innovative AI and IT solutions that drive 
                 growth, efficiency, and digital transformation.
               </p>
             </motion.div>
@@ -122,7 +122,7 @@ export function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-foreground/70">
-                To be the world's most trusted AI and technology partner, leading the way in 
+                To be your most trusted AI and technology partner, leading the way in 
                 innovation and shaping the future of digital business.
               </p>
             </motion.div>

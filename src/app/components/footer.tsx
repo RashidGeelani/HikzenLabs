@@ -27,22 +27,25 @@ export function Footer({ onNavigate }: FooterProps) {
                 Subscribe to our newsletter for the latest updates on AI, tech trends, and our services.
               </p>
             </div>
-            <form 
-            onSubmit={handleNewsletterSubmit} className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#0066ff] to-[#00d4ff] text-white hover:shadow-lg hover:shadow-[#0066ff]/30 transition-all duration-300 flex items-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                Subscribe
-              </button>
-            </form>
+            <form
+  onSubmit={handleNewsletterSubmit}
+  className="flex flex-col sm:flex-row gap-3"
+>
+  <input
+    type="email"
+    placeholder="Enter your email"
+    required
+    className="flex-1 w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
+  />
+
+  <button
+    type="submit"
+    className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-[#0066ff] to-[#00d4ff] text-white hover:shadow-lg hover:shadow-[#0066ff]/30 transition-all duration-300 flex items-center justify-center gap-2"
+  >
+    <Send className="w-4 h-4" />
+    Subscribe
+  </button>
+</form>
           </div>
         </div>
 
@@ -67,7 +70,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <a href="#" className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
+              <a href="https://www.instagram.com/hikzenlabs?igsh=YTAwdzdyMzhuYWJ1" className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
