@@ -12,7 +12,7 @@ import { FAQPage } from '@/app/pages/faq';
 import { ContactPage } from '@/app/pages/contact';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
-
+import { WhatsAppPopup } from './components/WhatsappPopUp';
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
@@ -58,6 +58,9 @@ export default function App() {
         {renderPage()}
       </main>
       <Footer onNavigate={handleNavigate} />
+
+
+      <WhatsAppPopup />
 
       <Analytics />
       <SpeedInsights />
