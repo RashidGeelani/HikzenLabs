@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, MessageSquare, Calendar, Linkedin, Twitter, Facebook, Instagram, Github} from 'lucide-react';
+import emailjs from "emailjs-com";
 
 export function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -14,12 +15,25 @@ export function ContactPage() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Mock form submission
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 5000);
-  };
+  
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  emailjs.send(
+    "service_y707mzx",
+    "template_r41g7qe",
+    formData,
+    "E54mi6zbh7PiWvDiI"
+  ).then(
+    () => {
+      setFormSubmitted(true);
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+};
 
   const socials = [
   { name: "LinkedIn", icon: Linkedin, link: "#" },
