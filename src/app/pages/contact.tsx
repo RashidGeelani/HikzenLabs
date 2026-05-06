@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, MessageSquare, Calendar, Linkedin, Twitter, Facebook, Instagram, Github} from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, MessageSquare, Calendar, Linkedin, Twitter, Facebook, Instagram, Github, Icon} from 'lucide-react';
 import emailjs from "emailjs-com";
+import { FaWhatsapp } from 'react-icons/fa';
 
 export function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -39,8 +40,17 @@ const handleSubmit = (e: React.FormEvent) => {
   { name: "LinkedIn", icon: Linkedin, link: "#" },
   { name: "Twitter", icon: Twitter, link: "#" },
   { name: "Facebook", icon: Facebook, link: "#" },
-  { name: "Instagram", icon: Instagram, link: "https://www.instagram.com/hikzenlabs?igsh=YTAwdzdyMzhuYWJ1" },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    link: "https://www.instagram.com/hikzenlabs?igsh=YTAwdzdyMzhuYWJ1"
+  },
   { name: "GitHub", icon: Github, link: "#" },
+  {
+    name: "WhatsApp",
+    icon: FaWhatsapp,
+    link: "https://wa.me/919906121238?text=Hi%20HikzenLabs,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+  }
 ];
 
 
@@ -67,19 +77,19 @@ const handleSubmit = (e: React.FormEvent) => {
       gradient: 'from-[#00d4ff]/20 to-[#00ffcc]/20'
     },
     {
+  icon: FaWhatsapp,
+  title: 'Message Us',
+  value: 'Talk to us on WhatsApp',
+  link: 'https://wa.me/919906121238?text=Hi%20HikzenLabs,%20I%20would%20like%20to%20know%20more%20about%20your%20services.',
+  gradient: 'from-[#1dfa00]/20 to-[#07f733]/20'
+},
+    {
       icon: MapPin,
       title: 'Visit Us',
-      value: 'Srinagar, Kashmir',
+      value: 'Srinagar, Kashmir <br /> Mumbai, Maharashtra',
       link: '#',
       gradient: 'from-[#7c3aed]/20 to-[#00d4ff]/20'
     },
-    {
-      icon: MapPin,
-      title: 'Also At',
-      value: 'Mumbai, Maharashtra',
-      link: '#',
-      gradient: 'from-[#14b8a6]/20 to-[#00ffcc]/20'
-    }
   ];
 
   const officeHours = [
@@ -128,7 +138,10 @@ const handleSubmit = (e: React.FormEvent) => {
                     <Icon className="w-6 h-6 text-[#0066ff]" />
                   </div>
                   <h3 className="font-semibold mb-2">{info.title}</h3>
-                  <p className="text-foreground/70">{info.value}</p>
+                  <p
+  className="text-foreground/70"
+  dangerouslySetInnerHTML={{ __html: info.value }}
+/>
                 </motion.a>
               );
             })}
@@ -191,13 +204,25 @@ const handleSubmit = (e: React.FormEvent) => {
                     <div>
                       <label className="block text-sm font-medium mb-2">Phone</label>
                       <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
-                        placeholder="+91 2345678906"
-                      />
+  type="tel"
+  name="phone"
+  value={formData.phone}
+  onChange={(e) => {
+    const value = e.target.value.replace(/\D/g, "");
+
+    if (value.length <= 10) {
+      setFormData({
+        ...formData,
+        phone: value
+      });
+    }
+  }}
+  inputMode="numeric"
+  pattern="[0-9]*"
+  maxLength={10}
+  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
+  placeholder="9906121238"
+/>
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Company</label>
@@ -222,19 +247,19 @@ const handleSubmit = (e: React.FormEvent) => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
                       >
-                        <option value="">Select a service</option>
-                        <option value="web">Web Development</option>
-                        <option value="mobile">Mobile App Development</option>
-                        <option value="backend">Backend Services</option>
-                        <option value="uiux">UI/UX Design</option>
-                        <option value="ai">AI Automation</option>
-                        <option value="marketing">Digital Marketing</option>
-                        <option value="seo">SEO Services</option>
-                        <option value="maintenance">Maintenance & Support</option>
-                        <option value="other">Other</option>
+                        <option className="bg-white text-black" value="">Select a service</option>
+                        <option className="bg-white text-black" value="web">Web Development</option>
+                        <option className="bg-white text-black"value="mobile">Mobile App Development</option>
+                        <option className="bg-white text-black"value="backend">Backend Services</option>
+                        <option className="bg-white text-black"value="uiux">UI/UX Design</option>
+                        <option className="bg-white text-black" value="ai">AI Automation</option>
+                        <option className="bg-white text-black" value="marketing">Digital Marketing</option>
+                        <option className="bg-white text-black" value="seo">SEO Services</option>
+                        <option className="bg-white text-black" value="maintenance">Maintenance & Support</option>
+                        <option className="bg-white text-black" value="other">Other</option>
                       </select>
                     </div>
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-medium mb-2">Budget Range</label>
                       <select
                         name="budget"
@@ -242,14 +267,14 @@ const handleSubmit = (e: React.FormEvent) => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
                       >
-                        <option value="">Select budget</option>
-                        <option value="<5k">Less than ₹5,000</option>
-                        <option value="5k-10k">₹5,000 - ₹10,000</option>
-                        <option value="10k-25k">₹10,000 - ₹25,000</option>
-                        <option value="25k-50k">₹25,000 - ₹50,000</option>
-                        <option value="50k+">₹50,000+</option>
+                        <option className="bg-white text-black" value="">Select budget</option>
+                        <option className="bg-white text-black"  value="<5k">Less than ₹10,000</option>
+                        <option className="bg-white text-black"  value="5k-10k">₹5,000 - ₹10,000</option>
+                        <option className="bg-white text-black"  value="10k-25k">₹10,000 - ₹25,000</option>
+                        <option className="bg-white text-black"  value="25k-50k">₹25,000 - ₹50,000</option>
+                        <option className="bg-white text-black"  value="50k+">₹50,000+</option>
                       </select>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div>
